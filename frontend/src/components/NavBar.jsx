@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import { MdAddHome, MdHomeWork, MdPermContactCalendar } from "react-icons/md";
 import { RiCheckboxMultipleBlankFill } from "react-icons/ri";
 
-const Navbar = () => {
+const Navbar = ({ containerStyles }) => {
   return (
-    <nav>
+    <nav className={`${containerStyles}`}>
       <NavLink
         to={"/"}
         className={({ isActive }) =>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <div>Listing</div>
       </NavLink>
       <NavLink
-        to={"/"}
+        to={"/mailto:inquiries.yvan.grebe@gmail.com"}
         className={({ isActive }) =>
           isActive
             ? "active-link flexCenter gap-x-1 rounded-full px-2 py-1"
@@ -43,7 +43,7 @@ const Navbar = () => {
         className={({ isActive }) =>
           isActive
             ? "active-link flexCenter gap-x-1 rounded-full px-2 py-1"
-            : "flexCenter gap-x-1 rounded-full px-2 py-1"
+            : "flexCenter gap-x-1 rounded-full px-2 py-1 cursor-pointer"
         }
       >
         <MdAddHome />
