@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useState } from "react";
+import { MdMenu, MdClose } from "react-icons/md";
+import userIcon from "../assets/user.svg";
 
 const Header = () => {
-  const [menuOpened, setmenuOpened] = useState(true);
+  const [active, setactive] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const toggleMenu = () => setMenuOpened(!menuOpened);
   return (
     <header className="max-padd-container fixed top-1 w-full left-0 right-0 z-50">
       {/* container */}
@@ -33,7 +37,23 @@ const Header = () => {
             />
           </div>
           {/* buttons */}
-          {!menuOpened ? () : ()}
+          <div className="flexBetween gap-x-3 sm:gap-x-5 bold-16">
+            {!menuOpened ? (
+              <MdMenu
+                onClick={toggleMenu}
+                className="xl:hidden cursor-pointer text-3xl hover:text-secondary"
+              />
+            ) : (
+              <MdClose
+                onClick={toggleMenu}
+                className="xl:hidden cursor-pointer text-3xl hover:text-secondary"
+              />
+            )}
+            <button className="btn-secondary flexCenter gap-x-2 medium-16 rounded-full p-2">
+              <img src={userIcon} alt="" height={22} width={22} />
+              <span>Login</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

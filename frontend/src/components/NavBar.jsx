@@ -39,7 +39,7 @@ const Navbar = ({ containerStyles }) => {
         <div>Contact</div>
       </NavLink>
       <NavLink
-        to={"/"}
+        to={"/addproperty"}
         className={({ isActive }) =>
           isActive
             ? "active-link flexCenter gap-x-1 rounded-full px-2 py-1"
