@@ -1,13 +1,33 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import userIcon from "../assets/user.svg";
 
 const Header = () => {
-  const [active, setactive] = useState(false);
+  const [active, setActive] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = () => setMenuOpened(!menuOpened);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        // close the menu if open when scrolling occurs
+        if (menuOpened) {
+          setMenuOpened(false);
+        }
+      }
+      // detect scroll
+      setActive(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    // clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  },[menuOpened]); 
+  // dependency array ensures that effect runs when menuOpened changes
+
   return (
     <header className="max-padd-container fixed top-1 w-full left-0 right-0 z-50">
       {/* container */}
