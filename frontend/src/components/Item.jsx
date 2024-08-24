@@ -1,4 +1,3 @@
-import React from "react";
 import HeartBtn from "./HeartBtn";
 import {
   MdOutlineBathtub,
