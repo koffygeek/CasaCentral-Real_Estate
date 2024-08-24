@@ -36,7 +36,7 @@ const About = () => {
             className="rounded-3xl rounded-tr-[155px] w-[488px]"
           />
           <div className="bg-white absolute bottom-16 left-16 max-w-xs p-4 rounded-lg flexCenter flex-col">
-            <span className="relative bottom-8 p-3 shadow-md bg-white h-12 w-12 flex items-center rounded-full">
+            <span className="relative bottom-8 p-3 shadow-md bg-green-300 h-12 w-12 flex items-center rounded-full">
               <RiDoubleQuotesL className="text-2xl" />
             </span>
             <p className="text-center relative bottom-3">
