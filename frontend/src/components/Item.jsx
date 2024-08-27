@@ -5,6 +5,7 @@ import {
   MdOutlineGarage,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { CgRuler } from "react-icons/cg";
 
 const Item = ({ property }) => {
   return (
@@ -31,6 +32,10 @@ const Item = ({ property }) => {
         <div className="flexCenter gap-x-2 border-r border-slate-900/50 pr-4 font-[500] ">
           <MdOutlineGarage />
           {property.facilities.parkings}
+        </div>
+        <div className="flexCenter gap-x-2 border-r border-slate-900/50 pr-4 font-[500] ">
+          <CgRuler />
+          400
         </div>
       </div>
       <div className="flexBetween">
