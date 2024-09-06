@@ -1,6 +1,5 @@
 import asyncHandler from "express-async-handler";
 import { prisma } from "../config/prismaConfig.js";
-import { json } from "express";
 
 export const createUser = asyncHandler(async (req, res) => {
   console.log("Creating a user");
@@ -88,5 +87,33 @@ export const cancelBookings = asyncHandler(async (req, res) => {
 // to add a resd to favourite list of a user
 export const toFav = asyncHandler(async (req, res) => {
   const { email } = req.body;
-  const { id } = req.params;
+  const { rid } = req.params;
+  try {
+    const user = await prisma.user.findUnique({
+      where: { email },
+    });
+    if (user.favResidenciesID.includes(rid)) {
+      const updatedUser = await prisma.user.update({
+        where: { email },
+        data: {
+          favResidenciesID: {
+            set: user.favResidenciesID.filter((id) => id !== rid),
+          },
+        },
+      });
+      res.send({ message: "Removed from favourites", user: updatedUser });
+    } else {
+      const updatedUser = await prisma.user.update({
+        where: { email },
+        data: {
+          favResidenciesID: {
+            push: rid,
+          },
+        },
+      });
+      res.send({ message: "Updated favourites", user: updatedUser });
+    }
+  } catch (err) {
+    throw new Error(err.message);
+  }
 });
