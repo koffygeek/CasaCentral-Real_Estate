@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { MdAddHome, MdHomeWork, MdPermContactCalendar } from "react-icons/md";
 import { RiCheckboxMultipleBlankFill } from "react-icons/ri";
 
-const Navbar = ({ containerStyles }) => {
+const NavBar = ({ containerStyles }) => {
   return (
     <nav className={`${containerStyles}`}>
       <NavLink
@@ -53,4 +53,4 @@ const Navbar = ({ containerStyles }) => {
   );
 };
 
-export default Navbar;
+export default NavBar;

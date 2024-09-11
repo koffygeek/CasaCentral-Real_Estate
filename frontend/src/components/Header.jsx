@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import NavBar from "./NavBar";
 import { useEffect, useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import userIcon from "../assets/user.svg";
@@ -46,13 +46,13 @@ const Header = () => {
           {/* navbar */}
           <div className="flexCenter gap-x-4">
             {/* Deskop */}
-            <Navbar
+            <NavBar
               containerStyles={
                 "hidden xl:flex gap-x-5 xl:gap-x-10 capitalize medium-15 ring-1 ring-slate-900/10 rounded-full p-2 bg-primary "
               }
             />
             {/* Mobile */}
-            <Navbar
+            <NavBar
               containerStyles={`${
                 menuOpened
                   ? "flex items-start flex-col gap-y-8 capitalize fixed top-20 right-8 p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-300 z-50"
