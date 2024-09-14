@@ -7,6 +7,9 @@ import Favourites from "./pages/Favourites";
 import { Suspense } from "react";
 import Layout from "./components/Layout";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ToastContainer } from "react-toastify";
+import { ReactQueryDevtools } from "react-query/devtools";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -25,6 +28,8 @@ export default function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
+      <ToastContainer />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

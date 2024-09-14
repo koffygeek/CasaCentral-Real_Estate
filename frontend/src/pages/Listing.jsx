@@ -2,9 +2,11 @@ import { SwiperSlide } from "swiper/react";
 import SearchBar from "../components/SearchBar";
 import { PROPERTIES } from "../constant/data";
 import Item from "../components/Item";
+import useProperties from "../hooks/useProperties";
 
 const Listing = () => {
-  const [data, isError, isLoading] = useProperties();
+  const { data, isError, isLoading } = useProperties();
+  // console.log(data);
   return (
     <main className="max-padd-container my-[99px]">
       <div className="max-padd-container py-10 xl:py-22 bg-primary rounded-3xl  ">
