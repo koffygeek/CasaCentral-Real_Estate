@@ -1,6 +1,5 @@
 import { SwiperSlide } from "swiper/react";
 import SearchBar from "../components/SearchBar";
-import { PROPERTIES } from "../constant/data";
 import Item from "../components/Item";
 import useProperties from "../hooks/useProperties";
 import PuffLoader from "react-spinners/PuffLoader";
@@ -17,7 +16,7 @@ const Listing = () => {
   }
   if (isLoading) {
     return (
-      <div>
+      <div className="h-64 flexCenter">
         <PuffLoader
           height="80"
           width="80"
@@ -35,7 +34,7 @@ const Listing = () => {
           <SearchBar />
           {/* container   */}
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10">
-            {PROPERTIES.map((property) => (
+            {data.map((property) => (
               <SwiperSlide key={property.title}>
                 <Item property={property} />
               </SwiperSlide>
