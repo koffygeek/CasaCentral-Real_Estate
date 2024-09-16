@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "react-toastify/dist/ReactToastify.css";
+import Property from "./pages/Property";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -20,7 +21,10 @@ export default function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/listing" element={<Listing />} />
+              <Route path="/listing">
+                <Route index element={<Listing />} />
+                <Route path=":propertyId" element={<Property />} />
+              </Route>
               <Route path="/addproperty" element={<AddProperty />} />
               <Route path="/bookings" element={<Bookings />} />
               <Route path="/favourites" element={<Favourites />} />

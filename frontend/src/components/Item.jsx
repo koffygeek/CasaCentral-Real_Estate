@@ -4,13 +4,17 @@ import {
   MdOutlineBed,
   MdOutlineGarage,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CgRuler } from "react-icons/cg";
 
 const Item = ({ property }) => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <div>
+    <div
+      onClick={() => navigate(`../listing/${property.id}`)}
+      className="rounded-2xl p-5 bg-white"
+    >
+      <div className="pb-2 relative">
         <img src={property.image} alt={property.title} className="rounded-xl" />
         {/* like btn  */}
         <div className="absolute top-4 right-6">
