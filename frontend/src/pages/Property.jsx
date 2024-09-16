@@ -1,3 +1,4 @@
+import React from "react";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router";
 import { getProperty } from "../utils/api";
@@ -10,6 +11,7 @@ const Property = () => {
   const { data, isLoading, isError } = useQuery(["resd", id], () =>
     getProperty(id)
   );
+  console.log(data);
   return <div>Property</div>;
 };
 
