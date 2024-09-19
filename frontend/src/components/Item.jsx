@@ -21,8 +21,8 @@ const Item = ({ property }) => {
           <HeartBtn />
         </div>
       </div>
-      <h5>{property.city} </h5>
-      <h4>{property.title} </h4>
+      <h5 className="bold-16 my-1 text-secondary ">{property.city} </h5>
+      <h4 className="medium-18 line-clamp-1">{property.title} </h4>
       {/* info  */}
       <div className="flex gap-x-2 py-2">
         <div className="flexCenter gap-x-2 border-r border-slate-900/50 pr-4 font-[500] ">
@@ -42,6 +42,7 @@ const Item = ({ property }) => {
           400
         </div>
       </div>
+      <p className="pt-2 mb-4 line-clamp-2">{property.description} </p>
       <div className="flexBetween">
         <div className="bold-20"> ${property.price}.00</div>
         <Link to={"/"}>

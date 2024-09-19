@@ -2,7 +2,7 @@ import { SwiperSlide } from "swiper/react";
 import SearchBar from "../components/SearchBar";
 import Item from "../components/Item";
 import useProperties from "../hooks/useProperties";
-import PuffLoader from "react-spinners/PuffLoader";
+import { PuffLoader } from "react-spinners";
 
 const Listing = () => {
   const { data, isError, isLoading } = useProperties();
